@@ -9,7 +9,7 @@ two basic variations.
 """
 
 from dataclasses import dataclass, asdict
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional # <--- THIS LINE IS ALREADY CORRECT, NO CHANGE NEEDED
 import uuid
 
 
@@ -18,7 +18,7 @@ class ABTestVariation:
     id: str
     content: str
     hashtags: List[str]
-    image_prompt: str | None = None
+    image_prompt: Optional[str] = None # <--- THIS IS THE LINE TO CHANGE
 
 
 @dataclass
