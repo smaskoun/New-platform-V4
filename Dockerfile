@@ -20,6 +20,7 @@ EXPOSE 5000
 ENV FLASK_APP wsgi:app
 
 # Run the command to start the Gunicorn server
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "wsgi:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "main:app"]
+
 
 
