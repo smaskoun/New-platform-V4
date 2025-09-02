@@ -5,6 +5,7 @@ This service creates new training examples in the database.  It does not
 perform analysis; see `brand_voice_analysis_service` for analysis.
 """
 
+from typing import Optional  # <--- ADD THIS LINE
 from models.social_media import TrainingData, db
 
 
@@ -12,8 +13,8 @@ class BrandVoiceService:
     """Handles persistence of brand voice training data."""
 
     def add_training_data(
-        self, user_id: str, content: str, image_url: str | None, post_type: str
-    ) -> TrainingData:
+        self, user_id: str, content: str, image_url: Optional[str], post_type: str
+    ) -> TrainingData: # <--- CHANGE THIS LINE
         """Create a new training data entry and save it to the database."""
         try:
             new_entry = TrainingData(
